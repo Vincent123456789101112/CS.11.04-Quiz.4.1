@@ -1,7 +1,46 @@
 public class Main {
 
-    /** 1. Write a method called numberOfVowels that returns the number of vowels in a string.
-     Consider a, e, i, o, u as vowels. **/
+
+    public static int numberOfVowels(String str) {
+        int count = 0;
+        str = str.toLowerCase();
+        String vowels = "aeiou";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int notDivisibleBy235(int n) {
+        int count = 0;
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+
+    public static String camelCaseMe(String str) {
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '-' || str.charAt(i) == '_') {
+
+                result += str.substring(0, i) + (str.charAt(i + 1) + "").toUpperCase() + str.substring(i + 2);
+
+            }
+            return result;
+        }
+        return result;
+    }
+}
+
+/** 1. Write a method called numberOfVowels that returns the number of vowels in a string.
+ Consider a, e, i, o, u as vowels. **/
     
 
     /** 2. Write a method called notDivisibleBy235 that finds the number of natural numbers not exceeding N
@@ -26,4 +65,3 @@ public class Main {
      "The_Stealth-Warrior" gets converted to "TheStealthWarrior" **/
 
 
-}
